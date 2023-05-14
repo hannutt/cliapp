@@ -174,7 +174,7 @@ class Commands:
             cursor = connection.execute('INSERT INTO LOG (LOGACT,TIME) VALUES (?,?)',(name,formattime))
             connection.commit()
 
-        elif answer != 'Y' or path.exists(name) == False:
+        elif answer != 'Y' or os.path.exists(name) == False:
 
             print("you answered no or path is not exists")
 
@@ -187,8 +187,14 @@ class Commands:
                  "Do.deldir(path)":  "delete folder",
                  "Do.openapp(filename)":"start program",
                  "Do.openbrowser(url)":"open url in browser",
-                 "Do.drawpie(label,number)":"Draws a piechart",
                  "Sys.info()" : "Cpu and disk information",
+                 "Do.showdistanceByName(city name, city name)":"Show distance betwee two cities",
+                 "Do.readcsv('csvname.csv',1,10)": "read first to rows from csv",
+                 "Do.writecsv(csvname,csv,itemname,itemvalue)":"write to csv file",
+                 "Do.readpdf('c:/path/filename.pdf')":"read pdf-file",
+                 "Do.drawgraph(item name, value)": "Draw pie or bar charts",
+                 "Do.readexcel('filename.xlsx','tablename',10)":"read firs 10 rows from excel file",
+
                  
                  }
         print(comms)
